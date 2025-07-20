@@ -1,0 +1,108 @@
+### 麻雀放銃予測バッチ処理レポート ###
+実行日時: 2025-07-20 22:56:19
+使用モデル: reach_predictor_dt_reg.joblib
+テストファイル: test.txt
+
+--- モデル設定 ---
+河の履歴長 (window_size): 12
+決定木の深さ (max_depth): 5
+--------------------------------------------------
+
+--- ケース 1/10 ---
+入力: 1m 2m 3m 4m 5m 6m 7m 8m 9m 東 南 西 北
+予測された放銃確率: 0.0196
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 0.0 -> True)
+  - Step 4: discard_is_haku      <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: discard_is_e         <= 0.50 (Actual: 0.0 -> True)
+
+--- ケース 2/10 ---
+入力: 1p 2p 3p 4p 5p 6p 7p 8p 9p 1s 2s 3s 4s
+予測された放銃確率: 0.0196
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 0.0 -> True)
+  - Step 4: discard_is_haku      <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: discard_is_e         <= 0.50 (Actual: 0.0 -> True)
+
+--- ケース 3/10 ---
+入力: 東 南 西 北 白 發 中 1m 2m 3m 4m 5m 6m
+予測された放銃確率: 0.3000
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 6.0 -> False)
+  - Step 4: river_1_is_s         <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: river_5_is_haku      <= 0.50 (Actual: 1.0 -> False)
+
+--- ケース 4/10 ---
+入力: 7p 8p 9p 1s 2s 3s 4s 5s 6s 7s 8s 9s 東
+予測された放銃確率: 0.0310
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 0.0 -> True)
+  - Step 4: discard_is_haku      <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: discard_is_e         <= 0.50 (Actual: 1.0 -> False)
+
+--- ケース 5/10 ---
+入力: 1m 1p 1s 2m 2p 2s 3m 3p 3s 4m 4p 4s 中
+予測された放銃確率: 0.0196
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 0.0 -> True)
+  - Step 4: discard_is_haku      <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: discard_is_e         <= 0.50 (Actual: 0.0 -> True)
+
+--- ケース 6/10 ---
+入力: 5m 5p 5s 6m 6p 6s 7m 7p 7s 8m 8p 8s 發
+予測された放銃確率: 1.0000
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 1.0 -> False)
+  - Step 3: river_1_num_m        <= 4.00 (Actual: 5.0 -> False)
+
+--- ケース 7/10 ---
+入力: 1m 9m 1p 9p 1s 9s 東 南 西 北 白 發 1m
+予測された放銃確率: 0.0260
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 1.0 -> False)
+  - Step 4: river_1_is_s         <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: river_5_is_haku      <= 0.50 (Actual: 0.0 -> True)
+
+--- ケース 8/10 ---
+入力: 2m 3m 4m 5m 6m 7m 8m 9m 1p 2p 3p 4p 5p
+予測された放銃確率: 0.0041
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 5.0 -> False)
+  - Step 2: river_11_num_p       <= 1.50 (Actual: 3.0 -> False)
+  - Step 3: river_12_is_chun     <= 0.50 (Actual: 0.0 -> True)
+  - Step 4: river_5_is_haku      <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: river_5_is_e         <= 0.50 (Actual: 0.0 -> True)
+
+--- ケース 9/10 ---
+入力: 東 東 南 南 西 西 北 北 白 白 發 發 中
+予測された放銃確率: 0.0196
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 0.0 -> True)
+  - Step 4: discard_is_haku      <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: discard_is_e         <= 0.50 (Actual: 0.0 -> True)
+
+--- ケース 10/10 ---
+入力: 1s 2s 3s 4s 5s 6s 7s 8s 9s 1m 2m 3m 4m
+予測された放銃確率: 0.0260
+判断の根拠 (デシジョンパス):
+  - Step 1: discard_num_p        <= 0.50 (Actual: 0.0 -> True)
+  - Step 2: discard_is_hatsu     <= 0.50 (Actual: 0.0 -> True)
+  - Step 3: discard_num_m        <= 0.50 (Actual: 4.0 -> False)
+  - Step 4: river_1_is_s         <= 0.50 (Actual: 0.0 -> True)
+  - Step 5: river_5_is_haku      <= 0.50 (Actual: 0.0 -> True)
+
