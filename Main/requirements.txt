@@ -1,0 +1,7 @@
+    # requirements.txt
+    numpy
+    pandas
+    scikit-learn
+    joblib
+    pytest
+    requests
