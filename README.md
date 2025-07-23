@@ -8,7 +8,11 @@ C0b22042柏木空翔
 
 1. 環境  
   python3.13  
-  使用ライブラリ: requirements.txt に記載  
+  使用ライブラリ: requirements.txt に記載
+
+2. 実験結果
+  Main/data/prediction_results/
+  に実験した結果があります。
 
 3. 使い方  
 ```txt
